@@ -1,0 +1,18 @@
+
+Not Yet Implemented:
+diff status, variations in contact types, variations of environment
+status of sickness
+
+Implemented:
+cluster/community movement
+bouncing off walls
+
+increase velocity to check if asymptotic behavior changes (x0.5)
+increase velocity to check if asymptotic behavior changes (x2)
+increase velocity to check if asymptotic behavior changes (x1.5)
+200 agents vs size
+You had mentioned about simulating your school hallway as an experiment. Are you still interested in that?
+compare hallway v.s. room
+avg contact time v.s. size of the room / agents
+Can you think of a way to increase contact duration in simulation? Instead of 5 seconds, can we increase to 5min?
+Is there a way to time these contacts? In real life, manual contact tracing would say Agent 1 was in contact with Agent 12 for 30 min on MM/DD//YY. This can be useful to identify the time between exposure and onset of symptoms.

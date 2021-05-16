@@ -1,0 +1,4 @@
+Total Interactions (Close + Far): 2465
+Total Contact Tracing Apps: 100
+Total Interactions Traced by App: 2465
+Percentage Interactions Traced by App: 100.0%
