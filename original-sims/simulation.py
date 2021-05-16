@@ -9,7 +9,7 @@ import time
 from math import sin, cos, sqrt, exp
 import numpy as np
 
-open('../sim_output.txt', 'w').close()
+open('../processing files/sim_output.txt', 'w').close()
 
 # Environmental Specifications
 num = 100  # number of agents
@@ -338,7 +338,7 @@ def drawFrame(dt=.05):
         win.after(int(framedelay), drawFrame)
     if flag % int(check_every*1000//framedelay) == 0:
         total_checks += 1
-        with open('../sim_output.txt', 'a') as output:
+        with open('../processing files/sim_output.txt', 'a') as output:
             output.write(f'Check Num (every {check_every} seconds): {total_checks}\n')
             output.write(f'Close Contacts: {len(contacts_close)}\n')
             for pair in contacts_close:

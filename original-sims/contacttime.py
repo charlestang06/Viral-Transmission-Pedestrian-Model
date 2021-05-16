@@ -19,7 +19,7 @@ short_far_contacts = 0
 far_contacts = 0
 far_app_contacts = 0
 
-output =  open('../sim_output.txt', 'r')
+output =  open('../processing files/sim_output.txt', 'r')
 contents = output.readlines()
 
 total_pairs = []
@@ -86,8 +86,8 @@ for x in range(len(far_arr)):
         far_count[x:] = []
         break
 
-open('../time_output.txt', 'w').close()
-with open('../time_output.txt', 'w') as output:
+open('../processing files/time_output.txt', 'w').close()
+with open('../processing files/time_output.txt', 'w') as output:
     output.write(f'Short Close Contacts and Total Duration of Short Contact\n')
     for x in range(len(close_arr)):
         output.write(f'{close_arr[x][0]+1} {close_arr[x][1]+1} {round(close_count[x]*check_every, 2)} seconds\n')
@@ -98,7 +98,7 @@ with open('../time_output.txt', 'w') as output:
         total_time += round(check_every * far_count[x], 2)
 
 
-input = open('../time_output.txt', 'r')
+input = open('../processing files/time_output.txt', 'r')
 contents = input.readlines()
 for x in range(len(contents)):
     contents[x] = contents[x].replace('\n', '')

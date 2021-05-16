@@ -5,7 +5,7 @@ short_far_contacts = 0
 far_contacts = 0
 far_app_contacts = 0
 
-input = open('../time_output.txt', 'r')
+input = open('../processing files/time_output.txt', 'r')
 contents = input.readlines()
 for x in range(len(contents)):
     contents[x] = contents[x].replace('\n', '')
