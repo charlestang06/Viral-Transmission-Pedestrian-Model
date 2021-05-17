@@ -1,6 +1,6 @@
 # COVID-19: Simulation
 
-Ran various simulations on agents and their interactions. Working with Archaana Santhana Krishnan and Prof. Schaumont. 
+Ran various simulations on agents and their interactions.
 
 [original-sims](https://github.com/charlestang06/research/tree/master/original-sims) - The original simulations from [here](http://motion.cs.umn.edu/PowerLaw/). 
 
