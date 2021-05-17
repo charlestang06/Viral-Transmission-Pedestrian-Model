@@ -1,4 +1,4 @@
-# research
+# COVID-19: Simulation
 
 Ran various simulations on agents and their interactions. Working with Archaana Santhana Krishnan and Prof. Schaumont. 
 
