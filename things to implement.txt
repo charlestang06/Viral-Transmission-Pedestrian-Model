@@ -2,8 +2,12 @@
 Not Yet Implemented:
 diff status, variations in contact types, variations of environment
 status of sickness
-snake-like movement
+snake-like movement, line
+familie movement, cluster moving down hallway movement
+continuous transmission (post-processing v.s. processing rn???)
+
 look up average degree of motion in hallways
+
 
 Implemented:
 two way hallways

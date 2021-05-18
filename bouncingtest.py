@@ -5,8 +5,8 @@ from math import sin, cos, sqrt, exp
 import numpy as np
 
 
-open('processing files/sim_output.txt', 'w').close()
-vars = open('processing files/variables.txt', 'r')
+open('processing files/sim_output.txt', 'w').close() #reser output file
+vars = open('processing files/variables.txt', 'r') #extract variables from masterrunner
 contents = vars.readlines()
 contents[0] = list(map(float, contents[0].split()))
 
@@ -23,8 +23,8 @@ check_every = 0.1 #sec
 k = 1.5
 m = 2.0
 t0 = 3
-rad = .2  # Collision radius
-sight = 1
+rad = 0.2  # Collision radius, aka the size of the agent
+sight = 1 #distance to determine a pair is a "close contact"
 maxF = 5  # Maximum force/acceleration
 
 pixelsize = 1000
@@ -39,7 +39,7 @@ canvas.pack()
 ittr = 0
 c = []  # center of agent
 v = []  # velocity
-gv = []  # goal velocity
+gv = []  # goal velocity, velocity will slowly change to this
 nbr = []  # neighbor list
 nd = []  # neighbor distance list
 QUIT = False
@@ -50,7 +50,6 @@ circles = []
 velLines = []
 gvLines = []
 text = []
-barrier = []
 
 def initSim():
     global rad
@@ -63,7 +62,6 @@ def initSim():
     print("")
 
     for i in range(num):
-
         circles.append(canvas.create_oval(0, 0, rad, rad, fill="white", tags = num))
         text.append(canvas.create_text(0, 0,fill="black",font="Times 15 italic bold",text=str(i+1)))
         velLines.append(canvas.create_line(0, 0, 10, 10, fill="red"))
@@ -77,9 +75,8 @@ def initSim():
             ang = rnd.uniform(np.pi-0.2,np.pi+0.2)
         elif hallway == 0:
             ang = rnd.uniform(0, 2*np.pi)
-        v[i][0] = cos(ang)*velocity
-        v[i][1] = sin(ang)*velocity
-
+        v[i][0] = cos(ang)*velocity #increased by a factor of velocity
+        v[i][1] = sin(ang)*velocity #increased by a factor of velocity
         gv[i] = 1.5 * np.copy(v[i])
 
 

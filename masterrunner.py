@@ -1,4 +1,5 @@
-import winsound, os, subprocess, sys
+import winsound, os, subprocess, sys, numpy as np, time, random, math, scipy
+
 open('processing files/final_output.txt', 'w').close() #clear output files
 sizes = [2.5, 5, 7.5, 10, 12.5, 15, 17.5, 20, 22.5, 25, 27.5, 30]
 
