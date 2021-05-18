@@ -2,11 +2,13 @@
 Not Yet Implemented:
 diff status, variations in contact types, variations of environment
 status of sickness
+snake-like movement
+look up average degree of motion in hallways
 
 Implemented:
+two way hallways
 cluster/community movement
 bouncing off walls
-
 increase velocity to check if asymptotic behavior changes (x0.5)
 increase velocity to check if asymptotic behavior changes (x2)
 increase velocity to check if asymptotic behavior changes (x1.5)
