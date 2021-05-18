@@ -1,6 +1,8 @@
 import winsound, os, subprocess, sys, numpy as np, time, random, math, scipy
 
-open('processing files/final_output.txt', 'w').close() #clear output files
+os.chdir('C:\\Users\charl\PycharmProjects\\research')
+
+open('processing/final_output.txt', 'w').close() #clear output files
 sizes = [2.5, 5, 7.5, 10, 12.5, 15, 17.5, 20, 22.5, 25, 27.5, 30]
 
 #Environment Variables
@@ -28,7 +30,7 @@ for size in sizes:
         if size != 15:
             continue
         else:
-            with open('processing files/variables.txt', 'w') as output: #initiate environment variables
+            with open('processing/variables.txt', 'w') as output: #initiate environment variables
                 output.write(f'{num_agents} {size} {velocity} {hallway} {iterations} {frac_of_circ} {community_range} {num_community} {num_apps} {min_contact_time}')
             if cluster == True and two_hallway == False:
                 os.system('python cluster.py') #runs the simulation with clusters/community
@@ -37,6 +39,7 @@ for size in sizes:
             else:
                 os.system('python varysize.py') #runs the simulation without clusters/commuinties
             if cluster == True:
+                os.chdir('C:\\Users\charl\PycharmProjects\\research\processing')
                 os.system('python cluster-timecalc.py') #processes data from sim_output for clustered
             else:
                 os.system('python timecalc.py') #processes data from the sim_output for non-clustered

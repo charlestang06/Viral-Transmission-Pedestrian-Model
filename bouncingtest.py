@@ -5,8 +5,8 @@ from math import sin, cos, sqrt, exp
 import numpy as np
 
 
-open('processing files/sim_output.txt', 'w').close() #reser output file
-vars = open('processing files/variables.txt', 'r') #extract variables from masterrunner
+open('processing/sim_output.txt', 'w').close() #reser output file
+vars = open('processing/variables.txt', 'r') #extract variables from masterrunner
 contents = vars.readlines()
 contents[0] = list(map(float, contents[0].split()))
 
@@ -303,7 +303,7 @@ def drawFrame(dt=.05):
         win.after(int(framedelay), drawFrame)
     if flag % 1 == 0:
         total_checks += 1
-        with open('processing files/sim_output.txt', 'a') as output:
+        with open('processing/sim_output.txt', 'a') as output:
             output.write(f'Check Num (every {check_every} seconds): {total_checks}\n')
             output.write(f'Close Contacts: {len(contacts_close)}\n')
             for pair in contacts_close:
