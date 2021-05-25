@@ -94,7 +94,7 @@ def initSim():
         gv.append(np.zeros(2))
         c[i][0] = rnd.uniform(0, s)
         c[i][1] = rnd.uniform(0, s)
-        if c[i][1]>=s/2:
+        if c[i][1]>=s/2 - rnd.randrange(int(-s*3/5), int(s*3/5)):
             ang = rnd.uniform(np.pi-0.2,np.pi+0.2)
         else:
             ang = rnd.uniform(-0.2, 0.2)

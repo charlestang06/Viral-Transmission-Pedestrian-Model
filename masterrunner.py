@@ -16,8 +16,8 @@ hallway = 1 #0 = false, 1 = true
 iterations = 1
 
 frac_of_circ = 32
-community_range = 5
-num_community = 20
+community_range = 10
+num_community = 0
 
 
 cluster = True #True if want to run with community clusters, False if want to run normal simulation
