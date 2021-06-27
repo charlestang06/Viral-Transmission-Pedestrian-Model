@@ -1,5 +1,7 @@
 # COVID-19: Simulation
 
+[Presentation](https://docs.google.com/presentation/d/1oyfPNAQYAknEse6Km84qwMH7f6kNhtfMq-nfcteLXYo/edit?usp=sharing)
+
 Ran various simulations on agents and their interactions.
 
 [original-sims](https://github.com/charlestang06/research/tree/master/original-sims) - The original simulations from [here](http://motion.cs.umn.edu/PowerLaw/). 
