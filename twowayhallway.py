@@ -24,7 +24,7 @@ k = 1.5
 m = 2.0
 t0 = 3
 rad = .2  # Collision radius
-sight = 1
+sight = float(contents[0][10])
 maxF = 5  # Maximum force/acceleration
 
 frac_of_circ = int(contents[0][5])
@@ -40,6 +40,7 @@ framedelay = 5
 drawVels = True
 
 win = Tk()
+win.iconify()
 canvas = Canvas(win, width=pixelsize, height=pixelsize, background="#444")
 canvas.pack()
 
@@ -64,12 +65,7 @@ def initSim():
     global rad
 
     print("")
-    print("Simulation of Agents on a flat 2D torus.")
-    print("Agents avoid collisions using prinicples based on the laws of anticipation seen in human pedestrians.")
-    print("Agents are white circles, Red agents are agents with contact tracing apps.")
-    print("Green Arrow is Goal Velocity, Red Arrow is Current Velocity")
-    print("SPACE to pause, 'S' to step frame-by-frame, 'V' to turn the velocity display on/off.")
-    print("")
+
     for i in range(num_community): #initiates cluster agents
         circles.append(canvas.create_oval(0, 0, rad, rad, fill="white", tags = num))
         text.append(canvas.create_text(0, 0,fill="black",font="Times 15 italic bold",text=str(i+1)))
@@ -338,7 +334,8 @@ def drawFrame(dt=.05):
             output.write(f'Close Contacts: {len(contacts_close)}\n')
             for pair in contacts_close:
                 output.write(f'{pair[0]} {pair[1]}\n')
-        print(f'check: {flag}')
+        if flag % 100 == 0:
+            print(f'check: {flag}')
         if flag >= 600:
             print('60 Seconds Finished')
             exit()
