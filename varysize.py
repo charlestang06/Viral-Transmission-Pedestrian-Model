@@ -26,7 +26,8 @@ k = 1.5
 m = 2.0
 t0 = 3
 rad = .2  # Collision radius
-sight = 1
+sight = float(contents[0][10])
+print(sight)
 maxF = 5  # Maximum force/acceleration
 
 pixelsize = 1000
@@ -34,6 +35,7 @@ framedelay = 5
 drawVels = True
 
 win = Tk()
+win.iconify()
 canvas = Canvas(win, width=pixelsize, height=pixelsize, background="#444")
 canvas.pack()
 
@@ -309,7 +311,8 @@ def drawFrame(dt=.05):
             output.write(f'Close Contacts: {len(contacts_close)}\n')
             for pair in contacts_close:
                 output.write(f'{pair[0]} {pair[1]}\n')
-        print(f'check: {flag}')
+        if flag % 100 == 0:
+            print(f'check: {flag}')
         if flag >= 600:
             print('60 Seconds Finished')
             exit()
