@@ -24,7 +24,7 @@ k = 1.5
 m = 2.0
 t0 = 3
 rad = .2  # Collision radius
-sight = 1
+sight = float(contents[0][10])
 maxF = 5  # Maximum force/acceleration
 
 frac_of_circ = int(contents[0][5])
