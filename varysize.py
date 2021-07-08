@@ -56,15 +56,6 @@ barrier = []
 
 def initSim():
     global rad
-
-    print("")
-    print("Simulation of Agents on a flat 2D torus.")
-    print("Agents avoid collisions using prinicples based on the laws of anticipation seen in human pedestrians.")
-    print("Agents are white circles, Red agents are agents with contact tracing apps.")
-    print("Green Arrow is Goal Velocity, Red Arrow is Current Velocity")
-    print("SPACE to pause, 'S' to step frame-by-frame, 'V' to turn the velocity display on/off.")
-    print("")
-
     for i in range(num):
 
         circles.append(canvas.create_oval(0, 0, rad, rad, fill="white", tags = num))
@@ -284,7 +275,7 @@ def on_key_press(event):
 
 flag = 0
 
-def drawFrame(dt=.05):
+def drawFrame(dt=.01):
     global start_time, step, paused, ittr, flag, total_checks
     if ittr > maxIttr or QUIT:  # Simulation Loop
         print("%s itterations ran ... quitting" % ittr)
@@ -309,9 +300,8 @@ def drawFrame(dt=.05):
             output.write(f'Close Contacts: {len(contacts_close)}\n')
             for pair in contacts_close:
                 output.write(f'{pair[0]} {pair[1]}\n')
-        print(f'check: {flag}')
         if flag >= 600:
-            print('60 Seconds Finished')
+            print('Simulation Done :D')
             exit()
     flag += 1
 

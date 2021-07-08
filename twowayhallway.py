@@ -313,7 +313,7 @@ def on_key_press(event):
 
 flag = 0
 
-def drawFrame(dt=.05):
+def drawFrame(dt=.01):
     global start_time, step, paused, ittr, flag, total_checks
     if ittr > maxIttr or QUIT:  # Simulation Loop
         print("%s itterations ran ... quitting" % ittr)
@@ -338,9 +338,8 @@ def drawFrame(dt=.05):
             output.write(f'Close Contacts: {len(contacts_close)}\n')
             for pair in contacts_close:
                 output.write(f'{pair[0]} {pair[1]}\n')
-        print(f'check: {flag}')
         if flag >= 600:
-            print('60 Seconds Finished')
+            print('All Done :D')
             exit()
     flag += 1
 

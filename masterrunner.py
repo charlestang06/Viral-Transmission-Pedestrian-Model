@@ -6,12 +6,12 @@ open('processing/final_output.txt', 'w').close() #clear output files
 sizes = [5, 7.5, 10, 12.5, 15, 17.5, 20, 22.5, 25, 27.5, 30]
 
 #Environment Variables
-num_agents = 150
+num_agents = 100
 num_apps = 0 #first num_community agents in clusters have contact apps
 min_contact_time = 0
-contact_radius = 2
+contact_radius = 2.5
 velocity = 1
-scenario = 0 #0 = room, 1 = one-way, 2 = two-way
+scenario = 1#0 = room, 1 = one-way, 2 = two-way
 iterations = 5
 
 #cluster envirionment variables
@@ -22,9 +22,9 @@ cluster = False #True if want to run with community clusters, False if want to r
 
 
 for size in sizes:
-    print(size)
     for x in range(iterations):
-        print(x)
+        print(size)
+        print(x+1)
         os.chdir('C:\\Users\\charl\\PycharmProjects\\research')
         with open('processing/variables.txt', 'w') as output: #initiate environment variables
             output.write(f'{num_agents} {size} {velocity} {scenario} {iterations} {frac_of_circ} {community_range} {num_community} {num_apps} {min_contact_time} {contact_radius}')
