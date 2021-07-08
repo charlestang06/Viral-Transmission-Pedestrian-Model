@@ -24,7 +24,7 @@ check_every = 0.1 #sec
 k = 1.5
 m = 2.0
 t0 = 3
-rad = .2  # Collision radius
+rad = 0.2  # Collision radius #0.2 rendered
 sight_close = 0.5  # Neighbor search rang
 sight_far = 1
 maxF = 5  # Maximum force/acceleration
@@ -79,7 +79,7 @@ def initSim():
          #   v[i][0] = 0
           #  v[i][1] = 0
         #else:
-        circles.append(canvas.create_oval(0, 0, rad, rad, fill="white", tags = num))
+        circles.append(canvas.create_oval(0, 0, 0.2, 0.2, fill="white", tags = num))
         text.append(canvas.create_text(0, 0,fill="black",font="Times 15 italic bold",text=str(i+1)))
         velLines.append(canvas.create_line(0, 0, 10, 10, fill="red"))
         gvLines.append(canvas.create_line(0, 0, 10, 10, fill="green"))
@@ -100,7 +100,7 @@ def initSim():
 
 def drawWorld():
     global rad, s
-    #scale = pixelsize / s
+    scale = pixelsize / s
     #canvas.coords(circles[num-1], scale * (c[num-1][0] - rad), scale * (c[num-1][1] - rad), scale * (c[num-1][0] + rad),
              #     scale * (c[num-1][1] + rad))
     for i in range(num):
@@ -193,6 +193,7 @@ def ttc(pa, pb, va, vb, ra, rb):
     if p[0] < -s / 2.: p[0] = p[0] + s
     if p[1] < -s / 2.: p[1] = p[1] + s
     rv = vb - va  # relative velocity
+
 
     a = rv.dot(rv)
     b = 2 * rv.dot(p)
