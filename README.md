@@ -1,4 +1,4 @@
-# COVID-19: Simulation
+# Viral transmissions in pedestrian models: a simulated study
 
 [Presentation](https://docs.google.com/presentation/d/1oyfPNAQYAknEse6Km84qwMH7f6kNhtfMq-nfcteLXYo/edit?usp=sharing)
 
