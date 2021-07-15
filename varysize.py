@@ -34,6 +34,7 @@ framedelay = 5
 drawVels = True
 
 win = Tk()
+win.iconify()
 canvas = Canvas(win, width=pixelsize, height=pixelsize, background="#444")
 canvas.pack()
 
