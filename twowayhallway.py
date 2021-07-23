@@ -1,4 +1,5 @@
 import random as rnd
+import tkinter
 from tkinter import *
 import time
 from math import sin, cos, sqrt, exp
@@ -41,7 +42,7 @@ drawVels = True
 
 win = Tk()
 win.iconify()
-canvas = Canvas(win, width=pixelsize, height=pixelsize, background="#444")
+canvas = Canvas(win, width=pixelsize, height=pixelsize, background="#E0E0E0")
 canvas.pack()
 
 # Initialized variables
@@ -64,10 +65,10 @@ barrier = []
 def initSim():
     global rad
     for i in range(num_community): #initiates cluster agents
-        circles.append(canvas.create_oval(0, 0, rad, rad, fill="white", tags = num))
+        circles.append(canvas.create_oval(0, 0, rad, rad, fill="light salmon", tags = num))
         text.append(canvas.create_text(0, 0,fill="black",font="Times 15 italic bold",text=str(i+1)))
-        velLines.append(canvas.create_line(0, 0, 10, 10, fill="red"))
-        gvLines.append(canvas.create_line(0, 0, 10, 10, fill="green"))
+        velLines.append(canvas.create_line(0, 0, 10, 10, fill="red", arrow=tkinter.LAST, width = 3))
+        gvLines.append(canvas.create_line(0, 0, 10, 10, fill="green", arrow=tkinter.LAST, width = 3))
 
         c.append(np.zeros(2))
         v.append(np.zeros(2))
@@ -78,10 +79,10 @@ def initSim():
         canvas.itemconfig(circles[i], fill="magenta") #colors community agents red
 
     for i in range(num_community, num):
-        circles.append(canvas.create_oval(0, 0, rad, rad, fill="white", tags = num))
+        circles.append(canvas.create_oval(0, 0, rad, rad, fill="light salmon", tags = num))
         text.append(canvas.create_text(0, 0,fill="black",font="Times 15 italic bold",text=str(i+1)))
-        velLines.append(canvas.create_line(0, 0, 10, 10, fill="red"))
-        gvLines.append(canvas.create_line(0, 0, 10, 10, fill="green"))
+        velLines.append(canvas.create_line(0, 0, 10, 10, fill="red", arrow=tkinter.LAST, width = 3))
+        gvLines.append(canvas.create_line(0, 0, 10, 10, fill="green", arrow=tkinter.LAST, width = 3))
         c.append(np.zeros(2))
         v.append(np.zeros(2))
         gv.append(np.zeros(2))

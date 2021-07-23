@@ -11,8 +11,8 @@ num_apps = 0 #first num_community agents in clusters have contact apps
 min_contact_time = 0
 contact_radius = 1
 velocity = 1
-scenario = 2 #0 = room, 1 = one-way, 2 = two-way
-iterations = 5
+scenario = 1 #0 = room, 1 = one-way, 2 = two-way
+iterations = 1
 
 #cluster envirionment variables
 frac_of_circ = 32
@@ -22,8 +22,6 @@ cluster = False #True if want to run with community clusters, False if want to r
 
 
 for size in sizes:
-    if size != 7.5:
-        continue
     for x in range(iterations):
         print(size)
         print(x+1)
